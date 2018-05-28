@@ -6,15 +6,22 @@
               <h4><%= idea.title %></h4>
                 
               </h3>
-             
+              <div class = "plus-sign">
+                <%= image_tag("30px-list-add.png", :alt => "plus") %>
+              </div>
               <div class="idea-description">
+              
               <p >
+              <div class = "toggler">
+              <%= image_tag("30px-list-remove.png", :alt => "minus") %>
                 <%= idea.description %>
+              </div>
               <p>
               
               </div>
               <div class="d-flex justify-content-between">
               <div class="d-flex justify-content-start">
+              
                 <h5><%= link_to "By #{idea.user.name}", idea_path(idea) %></h5> 
               <button type="button" class="btn btn-light">Joined</button>
               <button type="button" class="btn btn-light">Like</button>
