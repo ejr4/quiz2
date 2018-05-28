@@ -10,6 +10,58 @@
   </head>
 
   <body>
+<nav class="navbar ">
+    <a class="navbar-brand text-primary" style="font-size: 2rem" href="/">I D E A   M A T R I X</a>
+    <span>
+    
+    <%= link_to "Home ", root_path, {:style=>"font-size: 1.5rem"} %>
+   
+    
+    <%= link_to " New Idea", new_idea_path, {:style=>"font-size: 1.5rem"}  %>
+
+    <% if user_signed_in? %>
+      <span>Hello, <%= current_user.name %>!</span>
+      
+      <%= link_to( 
+        'Sign Out',
+        session_path, 
+        method: :delete,
+        :style=>"font-size: 1.5rem")
+       %>
+    <% else %>
+      <%= link_to 'Sign In', new_session_path, {:style=>"font-size: 1.5rem"} %>
+     
+      <%= link_to 'Sign Up', new_user_path, {:style=>"font-size: 1.5rem"} %>
+    <% end %>
+
+
+
+
+    </span>
+    </nav>
+    
+    
+
+    <hr>
+
+
+    <div class = "container-fluid">
+    <% flash.each do |type, msg| %>
+     <div
+          class="alert alert-<%= type == "alert" ? "danger" : "success" %> alert-dismissible fade show"
+          role="alert"
+        >
+          <%= msg %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      
+    <% end %>
+
+    </div>
+
+
     <%= yield %>
   </body>
 </html>

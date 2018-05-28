@@ -1,0 +1,25 @@
+<div class = "col">
+<% @ideas.each do |idea| %>
+          
+          <div class="row" style="margin-bottom: 15px; width: 33rem"> 
+              <h3><%= idea.title %></h3>
+                
+              </h3>
+              <br/>
+              <h4 >
+                <%= idea.description %>
+              </h4>
+              </br>
+              <span>
+                <%= link_to `By ${idea.user}`, idea_path(idea) %> 
+              
+              <small>
+                Posted <%= time_ago_in_words(idea.created_at) %> ago by <%= idea.user %>
+              </small>
+              </span>
+          </div>    
+         
+        
+  <% end %>
+
+  </div>
