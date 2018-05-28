@@ -1,6 +1,6 @@
 <div class = "col">
 <% @ideas.each do |idea| %>
-          
+          <div class="container">
           <div class="idea-container"> 
          
               <h3><%= idea.title %></h3>
@@ -13,14 +13,16 @@
               </h4>
               
               </div>
-              
+              <div class="d-flex justify-content-between">
                 <h4><%= link_to "By #{idea.user.name}", idea_path(idea) %></h4> 
+              <button type="button" class="btn btn-light">Joined</button>
+              <button type="button" class="btn btn-light">Like</button>
               
-              <small>
-                Posted <%= time_ago_in_words(idea.created_at) %> ago by <%= idea.user.name %>
-              </small>
+                <h4>Members: 5 | Likes: 5</h4>
               
+              </div>
           </div>    
+          </div>
          
         
   <% end %>
