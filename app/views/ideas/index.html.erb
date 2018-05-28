@@ -3,22 +3,25 @@
           <div class="container">
           <div class="idea-container"> 
          
-              <h3><%= idea.title %></h3>
+              <h4><%= idea.title %></h4>
                 
               </h3>
              
               <div class="idea-description">
-              <h4 >
+              <p >
                 <%= idea.description %>
-              </h4>
+              <p>
               
               </div>
               <div class="d-flex justify-content-between">
-                <h4><%= link_to "By #{idea.user.name}", idea_path(idea) %></h4> 
+              <div class="d-flex justify-content-start">
+                <h5><%= link_to "By #{idea.user.name}", idea_path(idea) %></h5> 
               <button type="button" class="btn btn-light">Joined</button>
               <button type="button" class="btn btn-light">Like</button>
               
-                <h4>Members: 5 | Likes: 5</h4>
+                </div>
+              
+                <h5>Members: 5 | Likes: 5</h5>
               
               </div>
           </div>    
